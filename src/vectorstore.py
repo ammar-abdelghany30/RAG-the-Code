@@ -43,5 +43,9 @@ def retrieve(query: str, k: int = TOP_K) -> List[Tuple[Document, float]]:
     return get_vectorstore().similarity_search_with_score(query, k=k)
 
 
+def delete_documents(ids: List[str]) -> None:
+    get_vectorstore().delete(ids=ids)
+
+
 def count() -> int:
     return get_vectorstore()._collection.count()
