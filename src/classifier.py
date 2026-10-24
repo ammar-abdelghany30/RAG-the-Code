@@ -10,13 +10,17 @@ Intent = Literal["explain", "generate"]
 
 SYSTEM = """You classify a user's programming request into exactly one label.
 
-explain  - the user wants existing code (or part of it) explained, analyzed, or debugged.
-generate - the user wants new code written.
+explain  - the user gives existing code (or refers to it) and wants it explained, analyzed,
+           debugged, fixed, optimized, refactored, or converted to another language.
+generate - the user wants NEW code written from a description, with no code to work on.
 
 Examples:
 "Explain this code." -> explain
 "What does this function do?" -> explain
 "Why is this loop incorrect?" -> explain
+"Fix this code: def f(x) return x" -> explain
+"Optimize this function: def f(n): return sum([i for i in range(n)])" -> explain
+"Convert this Python function to Java: def f(x): return x" -> explain
 "Write a function that sorts a list." -> generate
 "Build a Flask API." -> generate
 "Create a CNN model." -> generate
