@@ -19,6 +19,8 @@ TOP_K = 5
 load_dotenv(BASE_DIR / ".env")
 
 # --- LLM (OpenRouter, OpenAI-compatible) ---
-LLM_API_KEY = os.getenv("OPENROUTER_API_KEY")
-LLM_MODEL_NAME = os.getenv("OPENROUTER_MODELS")
-LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://openrouter.ai/api/v1")
+LLM_API_KEY = os.getenv("OPENAI_API_KEY")
+LLM_MODEL_NAME = os.getenv("LLM_MODEL_NAME")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1")
+
+RELEVANCE_MAX_DISTANCE = None
